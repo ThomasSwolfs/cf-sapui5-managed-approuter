@@ -11,7 +11,16 @@
       "version": "1.0.0"
     },
     "title": "{{appTitle}}",
-    "description": "{{appDescription}}"
+    "description": "{{appDescription}}",
+    "dataSources": {
+			"ZPM_NOTIFICATIONS_SRV": {
+				"uri": "sap/opu/odata/sap/ZPM_NOTIFICATIONS_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZPM_NOTIFICATIONS_SRV/metadata.xml"
+				}
+			}
+		}
   },
   "sap.ui": {
     "technology": "UI5",
@@ -55,7 +64,18 @@
         "settings": {
           "bundleName": "com.flexso.test.i18n.i18n"
         }
-      }
+      },
+      "": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+          "defaultCountMode": "None",
+          "useBatch" : false
+				},
+				"dataSource": "GATEWAYSERVICE_SRV",
+				"preload": true
+			}
     },
     "resources": {
       "css": [

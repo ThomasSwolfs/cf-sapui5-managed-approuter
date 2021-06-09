@@ -1,6 +1,14 @@
 {
   "welcomeFile": "/index.html",
+  "authenticationMethod": "route",
   "routes": [
+    {
+      "source": "^/sap/opu/(.*)$",
+      "target": "/sap/opu/$1",
+      "authenticationType": "xsuaa",
+      "destination": "s4h_backend",
+      "csrfProtection": false
+    },
     {
       "source": "^(.*)",
       "target": "$1",
